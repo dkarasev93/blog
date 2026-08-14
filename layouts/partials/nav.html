@@ -1,0 +1,12 @@
+{{ range .Site.Menus.main }}
+<a href="{{ .URL }}">{{ .Name }}</a>
+{{ end }}
+<a href="#" id="theme-toggle" role="button" title="Светлая/тёмная тема">◐</a>
+<script>
+document.getElementById('theme-toggle').addEventListener('click', function (e) {
+  e.preventDefault();
+  var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+</script>
