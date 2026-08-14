@@ -13,6 +13,6 @@ theme = "bearblog"
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "Blog"
-    url = "/blog/"
+    name = "Выпуски"
+    url = "/posts/"
     weight = 2
