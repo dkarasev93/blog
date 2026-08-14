@@ -1,0 +1,18 @@
+baseURL = "https://dkarasev93.github.io/blog/"
+languageCode = "en-us"
+title = "Dmitry Karasev"
+theme = "bearblog"
+
+[params]
+  description = "Notes on software and other things."
+  madeWithHugo = false
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 2
