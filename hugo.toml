@@ -16,3 +16,8 @@ theme = "bearblog"
     name = "Выпуски"
     url = "/posts/"
     weight = 2
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    style = "github"
