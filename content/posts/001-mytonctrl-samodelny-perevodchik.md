@@ -10,7 +10,7 @@ description = "Первый выпуск «Вечернего Валидатор
 
 ## СЕНСАЦИЯ: В ПОДВАЛЕ MYTONCTRL ОТКОПАН САМОДЕЛЬНЫЙ ПЕРЕВОДЧИК
 
-Ночью, при свете лупы, наш сыщик проник в `mypylib/mypylib.py` (строка 423, коммит `90046e0`) и обнаружил там механизм интернационализации, каковой достоин клейма и позора:
+Ночью, при свете лупы, наш сыщик проник в [`mypylib/mypylib.py`](https://github.com/ton-blockchain/mytonctrl/blob/90046e0/mypylib/mypylib.py#L423) (строка 423, коммит [`90046e0`](https://github.com/ton-blockchain/mytonctrl/commit/90046e0) конторы [mytonctrl](https://github.com/ton-blockchain/mytonctrl)) и обнаружил там механизм интернационализации, каковой достоин клейма и позора:
 
 ```python
 def translate(self, text: str) -> str:

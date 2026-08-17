@@ -8,7 +8,7 @@ description = "Четвёртый выпуск «Вечернего Валида
 
 **№ 4.** *Лондон. Туман густ, как смола в трубке. Сыщик оставил надзор за конторой mytonctrl и спустился ниже — в само машинное отделение, где на C++ крутится валидатор сети TON.*
 
-*Место происшествия: репозиторий `ton-blockchain/ton`, коммит `bb935a83e8da44a367dc211f264c8ffa13cb7ca1` (master от 03.08.2026), файл `crypto/vm/db/DynamicBagOfCellsDbV2.cpp`. Все цитаты дословные.*
+*Место происшествия: репозиторий [ton-blockchain/ton](https://github.com/ton-blockchain/ton), коммит [`bb935a83`](https://github.com/ton-blockchain/ton/commit/bb935a83e8da44a367dc211f264c8ffa13cb7ca1) (master от 03.08.2026), файл [`crypto/vm/db/DynamicBagOfCellsDbV2.cpp`](https://github.com/ton-blockchain/ton/blob/bb935a83e8da44a367dc211f264c8ffa13cb7ca1/crypto/vm/db/DynamicBagOfCellsDbV2.cpp). Все цитаты дословные.*
 
 ## СЕНСАЦИЯ: МЕХАНИЗМ, ПРИЗНАЮЩИЙСЯ В СОБСТВЕННОЙ ГЛУПОСТИ
 

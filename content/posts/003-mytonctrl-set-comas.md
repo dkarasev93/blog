@@ -8,7 +8,7 @@ description = "Третий выпуск «Вечернего Валидатор
 
 **№ 3.** *Лондон. Туман. В окне типографии дрожит газовый рожок — сыщик читает чужие исповеди при его свете.*
 
-*Коммит `90046e0`, ветка master, все цитаты дословные. Место происшествия: `mytoncore/output.py`, строки 50–115.*
+*Коммит [`90046e0`](https://github.com/ton-blockchain/mytonctrl/commit/90046e0) ([ton-blockchain/mytonctrl](https://github.com/ton-blockchain/mytonctrl)), ветка master, все цитаты дословные. Место происшествия: [`mytoncore/output.py`](https://github.com/ton-blockchain/mytonctrl/blob/90046e0/mytoncore/output.py#L50-L115), строки 50–115.*
 
 ## СЕНСАЦИЯ: ГОСПОДИН, СОБИРАЮЩИЙ JSON ИЗ ОШИБОК
 
