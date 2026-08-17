@@ -16,7 +16,7 @@ description = "Второй выпуск «Вечернего Валидатор
 
 ## СЕНСАЦИЯ ПЕРВАЯ: БЛИЗНЕЦЫ, КОТОРЫМ ВЕЛЕНО ИСЧЕЗНУТЬ, СЛУЖАТ ПО СЕЙ ДЕНЬ
 
-В делопроизводстве `mytoncore/utils.py`, на строках 50 и 70, разбирательство обнаружило двух сотрудников-близнецов. Первая особа:
+В делопроизводстве [`mytoncore/utils.py`](https://github.com/ton-blockchain/mytonctrl/blob/90046e0/mytoncore/utils.py), на строках [50](https://github.com/ton-blockchain/mytonctrl/blob/90046e0/mytoncore/utils.py#L50) и [70](https://github.com/ton-blockchain/mytonctrl/blob/90046e0/mytoncore/utils.py#L70), разбирательство обнаружило двух сотрудников-близнецов. Первая особа:
 
 ```python
 def hex2b64(inp: str):  # TODO: remove duplicates
@@ -40,7 +40,7 @@ def hex2base64(h: str):  # TODO: remove duplicates
 
 ## СЕНСАЦИЯ ВТОРАЯ: ПОЧТАМТ ОПУСКАЕТ ОДНО ПИСЬМО В ТРИ ЯЩИКА
 
-Улика из `mytoncore/mytoncore.py`, строки 831–837, — функция `SendFile`, отправляющая сообщения в сеть:
+Улика из [`mytoncore/mytoncore.py`, строки 831–837](https://github.com/ton-blockchain/mytonctrl/blob/90046e0/mytoncore/mytoncore.py#L831-L837), — функция `SendFile`, отправляющая сообщения в сеть:
 
 ```python
 self.liteClient.run("sendfile " + file_path)
@@ -56,7 +56,7 @@ if duplicateSendfile:
 
 ## СЕНСАЦИЯ ТРЕТЬЯ: СПРАВОЧНИК, ОТВЕЧАЮЩИЙ НА ЛЮБОЙ ВОПРОС МОЛЧАНИЕМ
 
-В `mypylib/mypylib.py`, строки 62–66, обитает существо по имени `Dict` — словарь, желающий казаться джентльменом с атрибутами:
+В [`mypylib/mypylib.py`, строки 62–66](https://github.com/ton-blockchain/mytonctrl/blob/90046e0/mypylib/mypylib.py#L62-L66), обитает существо по имени `Dict` — словарь, желающий казаться джентльменом с атрибутами:
 
 ```python
 def __setattr__(self, key: str, value: Any) -> None:
@@ -72,9 +72,9 @@ def __getattr__(self, key: str) -> Any:
 
 ## ХРОНИКА МЕЛКИХ ПРОИСШЕСТВИЙ
 
-*Отдел телеграфии.* В `modules/utilities.py` (строки 200–215) переговоры с lite-client ведутся по междугородной линии 1903 года: процесс поднят — `time.sleep(1)`; команда записана — `time.sleep(1)`; вторая команда — `time.sleep(1)`. Не дочитать ответ до конца, а выждать ровно секунду с минутной стрелкой в руке. Телеграф, с позволения сказать, надёжнее.
+*Отдел телеграфии.* В [`modules/utilities.py`](https://github.com/ton-blockchain/mytonctrl/blob/90046e0/modules/utilities.py#L200-L215) (строки 200–215) переговоры с lite-client ведутся по междугородной линии 1903 года: процесс поднят — `time.sleep(1)`; команда записана — `time.sleep(1)`; вторая команда — `time.sleep(1)`. Не дочитать ответ до конца, а выждать ровно секунду с минутной стрелкой в руке. Телеграф, с позволения сказать, надёжнее.
 
-*Отдел нумерологии.* `mytoncore/mytoncore.py:1703`:
+*Отдел нумерологии.* [`mytoncore/mytoncore.py:1703`](https://github.com/ton-blockchain/mytonctrl/blob/90046e0/mytoncore/mytoncore.py#L1703):
 
 ```python
 if complaint['suggestedFine'] != 101:
@@ -82,9 +82,9 @@ if complaint['suggestedFine'] != 101:
 
 Штраф ровно в 101 тон — не 100 и не 102. Вместо объяснения присовокуплена ссылка на `lite-client.cpp`: каббала, признанная судом приемлемой документацией.
 
-*Отдел канцелярии.* В реестре настроек `modules/__init__.py` (строки 54–56) значение по умолчанию для `duplicateApiUrl` — строка `'https://[testnet.]toncenter.com/api/v2/sendBoc'`, с квадратными скобками, как положено черновику, а не действующему адресу. А настройки `duplicateApi` и `checkAdnl` по умолчанию равны строке `'sendTelemetry'` — то есть имени соседней настройки. Канцелярия ссылается на канцелярию; бумага указывает на бумагу; сыщик поклонился и вышел.
+*Отдел канцелярии.* В реестре настроек [`modules/__init__.py`](https://github.com/ton-blockchain/mytonctrl/blob/90046e0/modules/__init__.py#L54-L56) (строки 54–56) значение по умолчанию для `duplicateApiUrl` — строка `'https://[testnet.]toncenter.com/api/v2/sendBoc'`, с квадратными скобками, как положено черновику, а не действующему адресу. А настройки `duplicateApi` и `checkAdnl` по умолчанию равны строке `'sendTelemetry'` — то есть имени соседней настройки. Канцелярия ссылается на канцелярию; бумага указывает на бумагу; сыщик поклонился и вышел.
 
-*Отдел азартных игр.* `modules/utilities.py:376–377`:
+*Отдел азартных игр.* [`modules/utilities.py:376–377`](https://github.com/ton-blockchain/mytonctrl/blob/90046e0/modules/utilities.py#L376-L377):
 
 ```python
 hosts = ['45.129.96.53', '5.154.181.153', '45.12.134.214']
@@ -93,9 +93,9 @@ hosts = random.sample(hosts, k=3)
 
 Из трёх подозреваемых жребием избираются... все трое. Сыщик пересчитал дважды и попросил повторить медленно.
 
-*Отдел магии.* `mytoncore/mytoncore.py:652` — `return b642hex(validator_pubkey_b64)[8:].upper()  # skip magic prefix`. Префикс магический, четырёхбайтный; существо магии не раскрыто. Наука бессильна, срез строки — нет.
+*Отдел магии.* [`mytoncore/mytoncore.py:652`](https://github.com/ton-blockchain/mytonctrl/blob/90046e0/mytoncore/mytoncore.py#L652) — `return b642hex(validator_pubkey_b64)[8:].upper()  # skip magic prefix`. Префикс магический, четырёхбайтный; существо магии не раскрыто. Наука бессильна, срез строки — нет.
 
-*Отдел опечаток.* Бот-осведомитель в `modules/alert_bot.py:397` ссылает клиентов на якорь `#endisbling-alerts` в документации. Разбирательство показало: страница существует, а вот такого якоря на ней не носит отродясь — ближайший по духу зовётся иначе и без пропущенной буквы.
+*Отдел опечаток.* Бот-осведомитель в [`modules/alert_bot.py:397`](https://github.com/ton-blockchain/mytonctrl/blob/90046e0/modules/alert_bot.py#L397) ссылает клиентов на якорь `#endisbling-alerts` в документации. Разбирательство показало: страница существует, а вот такого якоря на ней не носит отродясь — ближайший по духу зовётся иначе и без пропущенной буквы.
 
 ---
 
