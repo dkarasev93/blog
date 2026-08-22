@@ -16,6 +16,10 @@ theme = "bearblog"
     name = "Выпуски"
     url = "/posts/"
     weight = 2
+  [[menu.main]]
+    name = "Теги"
+    url = "/tags/"
+    weight = 3
 
 [markup]
   [markup.highlight]
