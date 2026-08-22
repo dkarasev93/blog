@@ -1,0 +1,13 @@
+{{ define "main" }}
+<content>
+  <h1>Теги</h1>
+  <ul class="blog-posts">
+    {{ range .Site.Taxonomies.tags.Alphabetical }}
+    <li>
+      <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>
+      <span><i>{{ .Count }}</i></span>
+    </li>
+    {{ end }}
+  </ul>
+</content>
+{{ end }}
