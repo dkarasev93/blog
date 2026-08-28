@@ -56,7 +56,7 @@ tags = ["ton-connect"]
         ],
 ```
 
-Жених по имени Gram Wallet: портрет на городском конфигурационном стенде, визитная карточка своя, диплинк фамильный — а мост для тайных свиданий, строка [43](https://github.com/ton-connect/sdk/blob/273bc3a6050e6024886ca50c12677dc42ae142a9/packages/sdk/src/resources/fallback-wallets-list.ts#L43), ведёт на чужой фамильный домен: `tonconnectbridge.mytonwallet.org`. Сыщик переписал адрес в блокнот и поставил три вопросительных знака: то ли родня, то ли квартира съёмная, то ли невесту приводят знакомиться в дом соседа. Свидетельство о родстве в книжке отсутствует.
+Жених по имени Gram Wallet: портрет на городском конфигурационном стенде, визитная карточка своя, диплинк фамильный — а мост для тайных свиданий, строка [43](https://github.com/ton-connect/sdk/blob/273bc3a6050e6024886ca50c12677dc42ae142a9/packages/sdk/src/resources/fallback-wallets-list.ts#L43), ведёт на чужой фамильный домен: `tonconnectbridge.mytonwallet.org`. Сыщик переписал адрес в блокнот и поставил три вопросительных знака: то ли родня, то ли квартира внаймы, то ли невесту приводят знакомиться в дом соседа. Свидетельство о родстве в книжке отсутствует.
 
 ## СЕНСАЦИЯ ВТОРАЯ: ГАДАНИЕ ПО МОРГАНИЮ ОКНА
 
@@ -146,7 +146,7 @@ export function openLink(href: string, target = '_self'): void {
 
 **Фокусник для Сафари.** В том же [`web-api.ts`](https://github.com/ton-connect/sdk/blob/273bc3a6050e6024886ca50c12677dc42ae142a9/packages/ui/src/app/utils/web-api.ts), строки [101–105](https://github.com/ton-connect/sdk/blob/273bc3a6050e6024886ca50c12677dc42ae142a9/packages/ui/src/app/utils/web-api.ts#L101-L105), лечится мобильный Сафари национальным средством: если у тела страницы нет атрибута `ontouchstart` — ему приписывают пустой `ontouchstart=""`. Атрибут-пустышка, талисман, шрам от прошлых боёв с `:active`. Работает — не трожь.
 
-**Самопровозглашение.** Спросить у жениха, он ли настоящий встроенный кошелёк, нельзя — спрашивают у него самого: [`injected-provider.ts`](https://github.com/ton-connect/sdk/blob/273bc3a6050e6024886ca50c12677dc42ae142a9/packages/sdk/src/provider/injected/injected-provider.ts), строки [47–49](https://github.com/ton-connect/sdk/blob/273bc3a6050e6024886ca50c12677dc42ae142a9/packages/sdk/src/provider/injected/injected-provider.ts#L47-L49), `return this.window[injectedWalletKey]!.tonconnect.isWalletBrowser;`. В мире, где любой скрипт на странице может надеть табличку `tonconnect` и прилепить к ней флажок `isWalletBrowser`, такая справка выдаётся по предъявлении таблички. Брачное бюро верит женихам на слово; впрочем, в этом городе верят все.
+**Самопровозглашение.** Спросить у жениха, он ли настоящий встроенный кошелёк, нельзя — спрашивают у него самого: [`injected-provider.ts`](https://github.com/ton-connect/sdk/blob/273bc3a6050e6024886ca50c12677dc42ae142a9/packages/sdk/src/provider/injected/injected-provider.ts), строки [47–49](https://github.com/ton-connect/sdk/blob/273bc3a6050e6024886ca50c12677dc42ae142a9/packages/sdk/src/provider/injected/injected-provider.ts#L47-L49), `return this.window[injectedWalletKey]!.tonconnect.isWalletBrowser;`. В мире, где любой скрипт на странице может надеть табличку `tonconnect` и прилепить к ней флажок `isWalletBrowser`, такая справка выдаётся по одному показу таблички. Брачное бюро верит женихам на слово; впрочем, в этом городе верят все.
 
 ---
 
