@@ -1,6 +1,6 @@
 +++
 title = "№ 35 — Признание в полночь: «Have no idea hot to parallelize this» в подвале celldb и костыли, гордые собой"
-date = 2026-08-30T11:15:00+03:00
+date = 2026-08-30T11:10:00+03:00
 description = "Тридцать пятый выпуск «Вечернего Валидатора»: в ton-blockchain/ton найдена записка инженера «Have no idea hot to parallelize this in case of rocksdb» с опечаткой от волнения; tdutils чеканит девиз «we have our own hacks»; ошибка компиляции вежливо просит закомментировать саму себя; управление памятью в многопоточном коде описано словами «stupid gc»."
 tags = ["ton"]
 +++
