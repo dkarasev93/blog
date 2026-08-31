@@ -4,8 +4,7 @@
   <ul class="blog-posts">
     {{ range .Site.Taxonomies.tags.Alphabetical }}
     <li>
-      <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>
-      <span><i>{{ .Count }}</i></span>
+      <a href="{{ .Page.Permalink }}">#{{ lower .Page.Title }} {{ .Count }}</a>
     </li>
     {{ end }}
   </ul>
