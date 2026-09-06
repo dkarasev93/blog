@@ -1,7 +1,7 @@
 +++
 title = "№ 48 — Дело о лишнем поле: TON Connect впустил контрабанду в ton_proof"
 date = 2026-09-06T16:58:53+03:00
-description = "Сорок восьмой выпуск «Вечернего Валидатора»: ton-connect/sdk исправляет дыру в проверке ton_proof, где внутренний объект proof пропускал неизвестные поля, а Telegram-ветка отбрасывала почти всех пользователей без Premium."
+description = "Сорок восьмой выпуск «Вечернего Валидатора»: ton-connect/sdk исправляет дыру в проверке ton_proof, где внутренняя структура proof пропускала неизвестные поля, а Telegram-ветка отбрасывала почти всех пользователей без Premium."
 tags = ["ton-connect"]
 +++
 
@@ -44,7 +44,7 @@ tags = ["ton-connect"]
 
 ## СТАРАЯ ОХРАНА УЖЕ ПРОВЕРИЛА КОНВЕРТ
 
-На строке [615](https://github.com/ton-connect/sdk/blob/3760b0c8d260c33d69bcf618e9787a8813a744da/packages/sdk/src/validation/schemas.ts#L615) охрана заходит в ветку `hasProof`. Строки [616–618](https://github.com/ton-connect/sdk/blob/3760b0c8d260c33d69bcf618e9787a8813a744da/packages/sdk/src/validation/schemas.ts#L616-L618) достают поле `proof` и объявляют его картой значений. На строках [619–621](https://github.com/ton-connect/sdk/blob/3760b0c8d260c33d69bcf618e9787a8813a744da/packages/sdk/src/validation/schemas.ts#L619-L621) проверяется, что перед нами вообще объект.
+На строке [615](https://github.com/ton-connect/sdk/blob/3760b0c8d260c33d69bcf618e9787a8813a744da/packages/sdk/src/validation/schemas.ts#L615) охрана заходит в ветку `hasProof`. Строки [616–618](https://github.com/ton-connect/sdk/blob/3760b0c8d260c33d69bcf618e9787a8813a744da/packages/sdk/src/validation/schemas.ts#L616-L618) достают поле `proof` и считают его картой значений. На строках [619–621](https://github.com/ton-connect/sdk/blob/3760b0c8d260c33d69bcf618e9787a8813a744da/packages/sdk/src/validation/schemas.ts#L619-L621) проверяется, что перед нами вообще словарь.
 
 Все выглядит чинно, пока сыщик не заглянул внутрь конверта. До коммита [`3760b0c`](https://github.com/ton-connect/sdk/commit/3760b0c8d260c33d69bcf618e9787a8813a744da) там не стоял отдельный список допустимых ключей. Проверки существовали для самой посылки и для соседней ошибки, но `proof` оказался особым джентльменом: его форму осмотрели, а содержимое карманов — нет.
 
@@ -54,7 +54,7 @@ tags = ["ton-connect"]
 
 ## ПОЧЕМУ ЛИШНИЙ КЛЮЧ НЕ ПРОСТО УКРАШЕНИЕ
 
-Редакция не станет объявлять всякое неизвестное поле немедленной катастрофой. Иногда форматы расширяют, а терпимый парсер помогает пережить обновление. Но `ton_proof` — это доказательство, которое проходит через границу между приложением и кошельком. Если схема обещает точный набор полей, лишняя записка внутри должна либо иметь смысл, либо быть отвергнута.
+Редакция не станет считать всякое неизвестное поле немедленной катастрофой. Иногда форматы расширяют, а терпимый парсер помогает пережить обновление. Но `ton_proof` — это доказательство, которое проходит через границу между приложением и кошельком. Если схема обещает точный набор полей, лишняя записка внутри должна либо иметь смысл, либо быть отвергнута.
 
 На строке [628](https://github.com/ton-connect/sdk/blob/3760b0c8d260c33d69bcf618e9787a8813a744da/packages/sdk/src/validation/schemas.ts#L628) после новой решетки начинается проверка `proof.timestamp`, а далее расследуются `domain`, `payload` и `signature`. То есть неизвестный ключ раньше мог пройти в комнату и остаться рядом с настоящими уликами, прежде чем охрана занялась обязательными полями. Новая проверка ставит общий порядок в начало коридора.
 
@@ -76,7 +76,7 @@ tags = ["ton-connect"]
                     isPremium: user.is_premium === true
 ```
 
-Строки [138–140](https://github.com/ton-connect/sdk/blob/3760b0c8d260c33d69bcf618e9787a8813a744da/packages/ui/src/app/utils/tma-api.ts#L138-L140) объясняют уловку без дымовой завесы: Telegram не присылает `is_premium` для пользователей без Premium. Если требовать его наличие, дверь захлопнется перед большей частью публики.
+Строки [138–140](https://github.com/ton-connect/sdk/blob/3760b0c8d260c33d69bcf618e9787a8813a744da/packages/ui/src/app/utils/tma-api.ts#L138-L140) описывают уловку без дымовой завесы: Telegram не присылает `is_premium` для пользователей без Premium. Если требовать его наличие, дверь захлопнется перед большей частью публики.
 
 Поэтому строка [140](https://github.com/ton-connect/sdk/blob/3760b0c8d260c33d69bcf618e9787a8813a744da/packages/ui/src/app/utils/tma-api.ts#L140) теперь проверяет только числовой `user.id`. А строка [143](https://github.com/ton-connect/sdk/blob/3760b0c8d260c33d69bcf618e9787a8813a744da/packages/ui/src/app/utils/tma-api.ts#L143) выставляет `isPremium` в `true` только при явном `user.is_premium === true`. Нет поля — значит, не Premium, а не исчезновение человека из реестра.
 
