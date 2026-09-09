@@ -34,7 +34,7 @@ if (op == 0x706c7567) {
 
 На строке [122](https://github.com/ton-blockchain/wallet-contract/blob/da472a98cafb233f891b4aeb24165a63b10d27a1/func/simple-subscription-plugin.fc#L122) проверяется сумма и флаг bounce. На строке [123](https://github.com/ton-blockchain/wallet-contract/blob/da472a98cafb233f891b4aeb24165a63b10d27a1/func/simple-subscription-plugin.fc#L123) часы подписки переводятся вперед, но это еще не замок от повторного визита: значение `last_payment` меняется только внутри ветки ответа, а не при выдаче запроса. Затем строки [124–129](https://github.com/ton-blockchain/wallet-contract/blob/da472a98cafb233f891b4aeb24165a63b10d27a1/func/simple-subscription-plugin.fc#L124-L129) отправляют средства и сохраняют состояние, которое может не успеть вернуться до следующего стука.
 
-Иными словами, задержка ответа превращала скромную подписку в лондонского джентльмена с двумя кошельками: один платеж уже в пути, второй еще только надевает пальто. Коммит так и назван — «Fix double spend when timeout is not enough to get response». В конторе, видимо, сочли, что это достаточно ясный диагноз.
+Иными словами, задержка ответа превращала скромную подписку в лондонского джентльмена с двумя кошельками: один платеж уже в пути, второй еще только надевает пальто. Коммит [`b7c7904`](https://github.com/ton-blockchain/wallet-contract/commit/b7c790494c4e1bd4946e226eaca736613a3ba868) так и назван — «Fix double spend when timeout is not enough to get response». В конторе, видимо, сочли, что это достаточно ясный диагноз.
 
 ## Запоздалый замок
 
