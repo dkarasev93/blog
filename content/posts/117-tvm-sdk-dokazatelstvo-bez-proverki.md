@@ -40,7 +40,7 @@ tags: [tvm-sdk]
 > - Consensus: VM behaviour changes on `gosh`-feature builds — a new opcode and a stricter `ZKHALO2VERIFYWITHVK`. Nodes on 3.0.x and 3.1.0 can disagree on the result of a transaction that uses either, so every validator of a network has to move to 3.1.0 together.
 > - `ZKHALO2VERIFYWITHVK`: recursive-aggregation (snark-verifier) proofs are now checked in full. A VkBlob with `accumulator_limbs = 12` makes the opcode also run the KZG accumulator pairing check over `instances[0..12]`; until now such a proof was accepted without verifying the inner proofs it folds.
 
-Это уже не просто неловкая строчка в тесте. Это смена поведения VM, где разъехавшиеся версии валидаторов могут по-разному ответить на один и тот же вызов.
+Это уже не просто неловкая строчка в тесте. Это смена поведения VM, где разошедшиеся версии валидаторов могут по-разному ответить на один и тот же вызов.
 
 ## ТРЕТИЙ СЛЕД: ПАТЧ В ТРИДЦАТЬ СТРОК
 
