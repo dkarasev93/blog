@@ -12,7 +12,7 @@ tags: [ton]
 
 ## ДЕЛО О ПАКЕТЕ, КОТОРЫЙ НЕЛЬЗЯ БЫЛО ПОДПУСКАТЬ К ПОЧТЕ
 
-След ведет в коммит [72811dcacf1cf17b9423c9bbd09cfd8a0eab2e2e](https://github.com/ton-org/ton/commit/72811dcacf1cf17b9423c9bbd09cfd8a0eab2e2e) конторы [ton-org/ton](https://github.com/ton-org/ton). Сыщик открыл папку [CHANGELOG.md](https://github.com/ton-org/ton/blob/72811dcacf1cf17b9423c9bbd09cfd8a0eab2e2e/CHANGELOG.md): в строке [11](https://github.com/ton-org/ton/blob/72811dcacf1cf17b9423c9bbd09cfd8a0eab2e2e/CHANGELOG.md#L11) сама контора объясняет, почему решила запереть одну версию библиотеки:
+След ведет в коммит [72811dcacf1cf17b9423c9bbd09cfd8a0eab2e2e](https://github.com/ton-org/ton/commit/72811dcacf1cf17b9423c9bbd09cfd8a0eab2e2e) конторы [ton-org/ton](https://github.com/ton-org/ton). Сыщик открыл папку [CHANGELOG.md](https://github.com/ton-org/ton/blob/72811dcacf1cf17b9423c9bbd09cfd8a0eab2e2e/CHANGELOG.md): в строке [11](https://github.com/ton-org/ton/blob/72811dcacf1cf17b9423c9bbd09cfd8a0eab2e2e/CHANGELOG.md#L11) сама контора объясняет, почему решила закрепить одну версию библиотеки:
 
 > `- Pin axios to version 1.14.0 to prevent installation of compromised version 1.14.1 containing remote access trojan (RAT). See https://github.com/axios/axios/issues/10604`
 >
